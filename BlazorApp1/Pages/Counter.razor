@@ -1,0 +1,21 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn carousel-item-start" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 10;
+
+    [Parameter]
+    public int IncrementAmount { get; set; } = 5;
+
+    private void IncrementCount()
+    {
+        currentCount += IncrementAmount;
+    }
+}
